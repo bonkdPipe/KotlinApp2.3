@@ -30,10 +30,14 @@
         tools:src="@drawable/image" />
 
     <Button
-        android:id="@+id/button_1.1"
+        android:id="@+id/button_1_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="140dp"
         android:text="Go to second (manager)"
-        tools:layout_editor_absoluteX="68dp"
-        tools:layout_editor_absoluteY="136dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_1" />
 </androidx.constraintlayout.widget.ConstraintLayout>

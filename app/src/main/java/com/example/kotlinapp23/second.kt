@@ -49,6 +49,17 @@ class second : Fragment() {
 
         videoView.setVideoPath("android.resource://"+ view.context.packageName +"/raw/pvz")
         videoView.start();
+
+        var button2 = view.findViewById<Button>(R.id.button_2_1);
+
+        button2.setOnClickListener { view ->
+
+            val newFragment = third()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, newFragment)
+                .addToBackStack(null) // Optional: Add to back stack for navigation
+                .commit()
+        }
         // Inflate the layout for this fragment
         return view
     }

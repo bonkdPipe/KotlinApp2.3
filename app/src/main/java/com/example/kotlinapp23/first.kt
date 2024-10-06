@@ -47,6 +47,18 @@ class first : Fragment() {
 
         var image: ImageView = view.findViewById(R.id.imageView)
         image.setImageResource(R.drawable.image);
+
+
+        var button2 = view.findViewById<Button>(R.id.button_1_1);
+
+        button2.setOnClickListener { view ->
+
+            val newFragment = second()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, newFragment)
+                .addToBackStack(null) // Optional: Add to back stack for navigation
+                .commit()
+        }
         // Inflate the layout for this fragment
         return view
     }

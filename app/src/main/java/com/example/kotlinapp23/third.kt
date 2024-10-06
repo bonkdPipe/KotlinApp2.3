@@ -42,8 +42,23 @@ class third : Fragment() {
         button.setOnClickListener { view ->
             findNavController().navigate(R.id.action_third_to_first)
         }
+
+        var button2 = view.findViewById<Button>(R.id.button_3_1);
+
+        button2.setOnClickListener { view ->
+
+            val newFragment = first()
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment, newFragment)
+                .addToBackStack(null) // Optional: Add to back stack for navigation
+                .commit()
+        }
         // Inflate the layout for this fragment
         return view
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
     }
 
     companion object {
